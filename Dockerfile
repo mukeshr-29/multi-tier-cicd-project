@@ -1,4 +1,4 @@
-FROM openjdk:8u151-jdk-alpine3.7
+FROM eclipse-temurin:17-jdk-alpine
 
 EXPOSE 8080
 
@@ -8,4 +8,4 @@ COPY target/*.jar $APP_HOME/app.jar
 
 WORKDIR $APP_HOME
 
-ENTRYPOINT exec java -jar app.jar
+CMD [ "java", "-jar", "app.jar" ]
