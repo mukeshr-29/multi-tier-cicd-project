@@ -75,7 +75,7 @@ pipeline{
             steps{
                 script{
                     withKubeConfig(caCertificate: '', clusterName: 'my-app', contextName: '', credentialsId: 'k8s', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://15CA6F2B70BA3FB50BAEBCBEAC40F1F8.gr7.us-east-1.eks.amazonaws.com'){
-                        sh 'kubectl apply dev-sev.yml'
+                        sh 'kubectl apply -f dev-sev.yml'
                         sleep 30
                     }
                 }
