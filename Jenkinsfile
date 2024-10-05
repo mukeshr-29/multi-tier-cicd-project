@@ -62,7 +62,7 @@ pipeline{
                 sh 'trivy image --format table -o img-report.html mukeshr29/bankapp:latest'
             }
         }
-        steps('docker image push'){
+        stage('docker image push'){
             steps{
                 script{
                     withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
